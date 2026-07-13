@@ -2,9 +2,9 @@ import type { RequestHandler } from "express";
 import cookieParser, { CookieParseOptions } from "cookie-parser";
 import session from "express-session";
 
-export const cookieParserConfig = (): RequestHandler => {
+export const cookieParserConfig = (options?: CookieParseOptions): RequestHandler => {
   const cookieParserOptions: CookieParseOptions = {
-
+    ...options,
   };
   return cookieParser();
 };

@@ -1,7 +1,8 @@
 import helmet, { HelmetOptions } from "helmet";
 
-export const helmetConfig = () => {
+export const helmetConfig = (options?: HelmetOptions) => {
   const helmetOptions: HelmetOptions = {
+    ...options,
     crossOriginOpenerPolicy: { policy: "unsafe-none" },
     crossOriginResourcePolicy: { policy: "cross-origin" },
     contentSecurityPolicy: false,
