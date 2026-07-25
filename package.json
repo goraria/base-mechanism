@@ -2,6 +2,18 @@
   "name": "@gorth/mechanism",
   "version": "2.0.0",
   "description": "",
+  "type": "module",
+  "author": "Gorthenburg",
+  "license": "GORTH",
+  "private": true,
+  "keywords": [
+    "gorth",
+    "supabase"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goraria/base-mechanism.git"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -43,7 +55,6 @@
   "files": [
     "dist"
   ],
-  "type": "module",
   "scripts": {
     "build": "tsup --minify",
     "prepack": "pnpm build",
@@ -55,12 +66,6 @@
     "update": "pnpm update",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "gorth",
-    "supabase"
-  ],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^2.3.0",
     "cookie-parser": "^1.4.7",
