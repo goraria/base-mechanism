@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import morgan from "morgan";
 import pc from "picocolors"
 
@@ -9,7 +9,7 @@ morgan.token("response-time-ms", (req: Request, res: Response) => {
   const num = parseFloat(time)
   return num >= 2000 ? `${(num / 1000).toFixed(1)}s` : `${Math.round(num)}ms`
 })
-morgan.token("status-color", (req: Request, res: Response) => {
+morgan.token("status-color", (_req: Request, res: Response) => {
   const s = res.statusCode
   switch (true) {
     case s >= 500:

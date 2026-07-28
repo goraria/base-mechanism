@@ -1,4 +1,4 @@
-import helmet, { HelmetOptions } from "helmet";
+import helmet, { type HelmetOptions } from "helmet";
 
 export const helmetConfig = (options?: HelmetOptions) => {
   const helmetOptions: HelmetOptions = {
