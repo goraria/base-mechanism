@@ -30,6 +30,11 @@
       "import": "./dist/cores/*.js",
       "require": "./dist/cores/*.cjs"
     },
+    "./configs/*": {
+      "types": "./dist/configs/*.d.ts",
+      "import": "./dist/configs/*.js",
+      "require": "./dist/configs/*.cjs"
+    },
     "./modules/*": {
       "types": "./dist/modules/*.d.ts",
       "import": "./dist/modules/*.js",
@@ -85,7 +90,8 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.6.1",
-    "express-session": "^1.19.0"
+    "express-session": "^1.19.0",
+    "vite": "^8.2.0"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.6",
