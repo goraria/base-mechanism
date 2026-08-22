@@ -1,6 +1,7 @@
 import { existsSync } from "fs"
 import { readFile } from "fs/promises"
 import { basename, relative, resolve } from "path"
+import pc from "picocolors"
 import { Logger } from "@/lib/logger"
 import {
   version as viteVersion,
@@ -64,11 +65,13 @@ function printServerStarted(server: ViteDevServer, mode: string): void {
   const environments = environmentFiles(mode) || "none"
   const readyIn = Math.round(performance.now() - configLoadedAt)
 
-  console.log(Logger(`Express.js 5.2.1 (Vite ${viteVersion})`, "info", "blue"))
+  console.log(`${pc.blue(`▼ Vite.js ${viteVersion}`)} (Express.js 5.2.1)`)
   console.log(`- Local:         ${localUrl}`)
   console.log(`- Network:       ${networkUrl}`)
   console.log(`- Environments: ${environments}`)
   console.log(Logger(`Ready in ${readyIn}ms`, "success", "green"))
+  console.log(Logger(`Running vite.config.ts took ${readyIn}ms`, "success", "green"))
+  console.log()
 }
 
 function printServerReloaded(): void {
@@ -79,7 +82,7 @@ function printServerReloaded(): void {
   const file = runtimeState.reloadFile ? ` ${runtimeState.reloadFile}` : ""
 
   console.log(
-    Logger(`Server reloaded${file} in ${reloadTime}ms`, "success", "green"),
+    Logger(`Server reloaded${file} in ${reloadTime}ms`, "success", "green")
   )
 
   runtimeState.reloadFile = undefined
@@ -152,7 +155,9 @@ export function configureDevelopmentServer(server: ViteDevServer): void {
   })
 }
 
-export function configureHotUpdateServer(context: HmrContext): ModuleNode[] | undefined {
+export function configureHotUpdateServer(
+  context: HmrContext
+): ModuleNode[] | undefined {
   if (isServerReloadFile(context.file)) {
     return
   }
@@ -161,7 +166,7 @@ export function configureHotUpdateServer(context: HmrContext): ModuleNode[] | un
   const elapsed = Math.max(0, Date.now() - context.timestamp)
 
   console.log(
-    Logger(`Server updated ${file} in ${elapsed}ms`, "success", "green"),
+    Logger(`Server updated ${file} in ${elapsed}ms`, "success", "green")
   )
 
   return context.modules
