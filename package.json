@@ -1,6 +1,6 @@
 {
   "name": "@gorth/mechanism",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "description": "",
   "type": "module",
   "author": "Gorthenburg",
@@ -81,7 +81,7 @@
     "jsonwebtoken": "^9.0.3",
     "morgan": "^1.12.0",
     "multer": "^2.3.0",
-    "nodemailer": "^9.0.6",
+    "nodemailer": "^9.1.0",
     "otplib": "^13.5.0",
     "picocolors": "^1.1.1",
     "qrcode": "^1.5.4"
