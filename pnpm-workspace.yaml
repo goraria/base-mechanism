@@ -1,3 +1,0 @@
-minimumReleaseAgeExclude:
-  - morgan@1.12.1
-  - nodemailer@10.0.8
